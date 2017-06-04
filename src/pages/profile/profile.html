@@ -1,0 +1,91 @@
+<ion-header>
+  <ion-navbar hideBackButton="true">
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Profile</ion-title>
+    <ion-buttons end>
+      <button ion-button icon-only><ion-icon ios="ios-mail" md="md-mail"></ion-icon></button>
+      <button ion-button icon-only><ion-icon ios="ios-notifications" md="md-notifications"></ion-icon></button>
+      <button ion-button icon-only><ion-icon name="md-more"></ion-icon></button>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+  <div class="subheader">
+    <div class="top" style="padding-bottom:30px">
+      <span class="align-left">
+        Section I: FT Info
+      </span>
+      <span class="align-right">
+          <ion-icon name="ios-create-outline" style="zoom:1.8; margin-top:-5px"></ion-icon>
+      </span>
+    </div>
+    <div class="bottom"></div>
+  </div>
+  <form (ngSubmit)="doSignUp()">
+    <div>
+      <div padding>
+        <div class="camera_box" text-center (click)="choose()">
+          <img src="assets/images/camera.png" alt="camera" class="img-camera" *ngIf="common.isEmpty(base64Image)" />
+          <img [src]="base64Image" alt="camera" class="img-camera" *ngIf="!common.isEmpty(base64Image)" />
+          <!-- <ion-select [selectOptions]="selectOptions" name="source" [(ngModel)]="source.picture" class="picture">
+            <ion-option *ngFor="let source of sources" value="{{source.id}}">
+              {{source.value}}
+            </ion-option>
+          </ion-select> -->
+        </div>
+
+      </div>
+      <div>
+        <ion-list class="padding-right-left">
+          <ion-item>
+            <ion-input name="ftName" placeholder="FT Name *" [(ngModel)]="foodtruck.name" required></ion-input>
+          </ion-item>
+          <ion-item>
+            <ion-input type="phone" name="ftContact" placeholder="FT Contact *" [(ngModel)]="foodtruck.contact" required></ion-input>
+          </ion-item>
+          <ion-item>
+            <ion-input name="ftBaseLocation" placeholder="FT Base Location" [(ngModel)]="foodtruck.baseLocation"></ion-input>
+          </ion-item>
+          <ion-item>
+            <ion-input name="ftTotalEmp" placeholder="Total Employees" [(ngModel)]="foodtruck.totalEmployees" required></ion-input>
+          </ion-item>
+        </ion-list>
+      </div>
+    </div>
+    <div class="subheader">
+      <div class="top" style="padding-bottom:30px">
+        <span class="align-left">
+        Section II: Personal Profile
+      </span>
+        <span class="align-right">
+          <ion-icon name="ios-create-outline" style="zoom:1.8; margin-top:-5px"></ion-icon>
+      </span>
+      </div>
+      <div class="bottom"></div>
+    </div>
+    <div>
+      <ion-list class="padding-right-left">
+        <ion-item>
+          <ion-input type="email" name="email" placeholder="Email *" [(ngModel)]="user.email" required></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-input type="phone" name="phone" placeholder="Mobile No. *" [(ngModel)]="user.mobile" required></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-input name="businessName" placeholder="Business Name" [(ngModel)]="user.businessName" required></ion-input>
+        </ion-item>
+      </ion-list>
+    </div>
+    <div padding text-center>
+      <!-- <button ion-button block color="gray">
+        Update
+      </button> -->
+      <button ion-fab (click)="addItems()" color="subheader" style="zoom:1.5; margin:auto">
+        <span style="font-size:12px">Update</span>
+      </button>
+    </div>
+  </form>
+</ion-content>

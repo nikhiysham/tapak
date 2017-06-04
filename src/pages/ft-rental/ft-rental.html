@@ -1,0 +1,121 @@
+<ion-header>
+  <ion-navbar hideBackButton="true">
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>FT Rental</ion-title>
+    <ion-buttons end>
+      <button ion-button icon-only><ion-icon ios="ios-mail" md="md-mail"></ion-icon></button>
+      <button ion-button icon-only><ion-icon ios="ios-notifications" md="md-notifications"></ion-icon></button>
+      <button ion-button icon-only><ion-icon name="md-more"></ion-icon></button>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+  <ion-grid class="search_box">
+    <ion-row>
+      <ion-col class="title">
+        <div class="welcome_text">Hi, User</div>
+        <div class="search_title">Search tapak criteria</div>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col col-12>
+        <ion-select [(ngModel)]="search.menuCategory" [selectOptions]="{subTitle:'Menu Category'}" placeholder="Menu Category">
+          <ion-option *ngFor="let cat of menuCategories" value="{{cat.id}}">
+            {{cat.value}}
+          </ion-option>
+        </ion-select>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col col-6>
+        <ion-item>
+          <ion-label>&nbsp;&nbsp;Start Date</ion-label>
+          <ion-datetime displayFormat="DD/MM/YYYY" pickerFormat="DD MMMM YYYY" [(ngModel)]="search.startDate"></ion-datetime>
+        </ion-item>
+      </ion-col>
+      <ion-col col-6>
+        <ion-item>
+          <ion-label>&nbsp;&nbsp;End Date</ion-label>
+          <ion-datetime displayFormat="DD/MM/YYYY" pickerFormat="DD MMMM YYYY" [(ngModel)]="search.endDate"></ion-datetime>
+        </ion-item>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col>
+        <button ion-button block>
+            <span>Let's go!</span>
+          </button>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+  <div class="slide_box">
+    <div class="padding-5">
+      <div class="title">Popular Tapak</div>
+      <div style="padding-top:10px;" class="card-background-page">
+        <ion-scroll scrollX="true">
+          <ion-card>
+            <ion-item>
+              <img src="assets/images/slides/slide1.jpg" style="width:150px; height:80px" />
+              <div style="padding-top:10px;">
+                <div>
+                  Tapak 1
+                </div>
+                <div class="title">
+                  Category : Western
+                </div>
+              </div>
+            </ion-item>
+          </ion-card>
+          <ion-card>
+            <ion-item>
+              <img src="assets/images/slides/slide2.jpg" style="width:150px; height:80px" />
+              <div style="padding-top:10px;">
+                <div>
+                  Tapak 2
+                </div>
+                <div class="title">
+                  Category : Local
+                </div>
+              </div>
+            </ion-item>
+          </ion-card>
+          <ion-card>
+            <ion-item>
+              <img src="assets/images/slides/slide3.jpg" style="width:150px; height:80px" />
+              <div style="padding-top:10px;">
+                <div>
+                  Tapak 3
+                </div>
+                <div class="title">
+                  Category : Beverages
+                </div>
+              </div>
+            </ion-item>
+          </ion-card>
+          <ion-card>
+            <ion-item>
+              <img src="assets/images/slides/slide4.jpg" style="width:150px; height:80px" />
+              <div style="padding-top:10px;">
+                <div>
+                  Tapak 4
+                </div>
+                <div class="title">
+                  Category : Western
+                </div>
+              </div>
+            </ion-item>
+          </ion-card>
+        </ion-scroll>
+      </div>
+    </div>
+  </div>
+  <div class="subscribe_box">
+    <!-- <ion-card class="padding-5">
+       <h5></h5>
+       <div></div>
+    </ion-card> -->
+  </div>
+</ion-content>

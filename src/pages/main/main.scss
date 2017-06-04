@@ -1,0 +1,20 @@
+page-main {
+    .content-md {
+      background-color: white !important;
+    }
+    .logo {
+      width: 200px;
+    }
+    .vertical-align-center > * {
+      display:flex !important;
+      align-content: center !important;
+      align-items: center !important;
+    }
+    .item-md {
+      padding-left: 0;
+    }
+    .fb_button {
+      width:80%;
+      margin: 0 10% 0 10% !important;
+    }
+}

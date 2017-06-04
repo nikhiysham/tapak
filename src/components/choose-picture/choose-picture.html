@@ -1,0 +1,18 @@
+<!-- <ion-content>
+  <ion-select [selectOptions]="selectOptions" #select1 [(ngModel)]="source">
+    <ion-option *ngFor="let src of sources" value="{{src.id}}">
+      {{src.value}}
+    </ion-option>
+  </ion-select>
+</ion-content> -->
+<ion-list radio-group class="padding-right-left">
+  <ion-list-header>Select picture sources</ion-list-header>
+  <ion-item>
+    <ion-label>Camera</ion-label>
+    <ion-radio value="1"  (click)="close('camera')"></ion-radio>
+  </ion-item>
+  <ion-item (click)="close()">
+    <ion-label>Gallery</ion-label>
+    <ion-radio value="2"  (click)="close('gallery')"></ion-radio>
+  </ion-item>
+</ion-list>

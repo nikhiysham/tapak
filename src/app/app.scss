@@ -1,0 +1,88 @@
+// http://ionicframework.com/docs/v2/theming/
+
+
+// App Global Sass
+// --------------------------------------------------
+// Put style rules here that you want to apply globally. These
+// styles are for the entire app and not just one component.
+// Additionally, this file can be also used as an entry point
+// to import other Sass files to be included in the output CSS.
+//
+// Shared Sass variables, which can be used to adjust Ionic's
+// default Sass variables, belong in "theme/variables.scss".
+//
+// To declare rules for a specific mode, create a child rule
+// for the .md, .ios, or .wp mode classes. The mode class is
+// automatically applied to the <body> element in the app.
+
+.toolbar-title-md {
+  font-size: 1.6rem;
+}
+
+.toolbar-md {
+  min-height:40px;
+}
+
+.ion-page  {
+   font-size: 12px;
+}
+.item-md {
+  padding-left: 0;
+  font-size: 12px;
+}
+
+.padding-right-left {
+  padding: 0 10px 0 10px;
+}
+
+.button {
+  text-transform: none;
+}
+
+.subheader>.top {
+ //  min-height: 50px;
+  background: color($colors,subheader);
+  padding:15px;
+  color: white;
+  font-size: 14px;
+  font-weight:500;
+}
+
+.subheader>.bottom {
+  background: url('../assets/images/subheader-bottom-left.png') no-repeat;
+ //  min-height:10px;
+  width: 10px;
+  height:10px;
+  background-position-y: -40px;
+}
+
+.subheader .subheader-icon {
+  border-radius: 50%;
+  background: gray;
+  width:20px;
+  height: 20px;
+}
+
+.align-left {
+  float:left;
+}
+
+.align-right {
+  float:right;
+}
+
+.camera_box {
+  border: 2px solid #CCC;
+}
+
+.img-camera {
+  width:100px;
+}
+
+.padding-5 {
+  padding:5px;
+}
+
+ion-backdrop {
+  opacity: 0.5 !important;
+}

@@ -1,0 +1,32 @@
+<ion-menu [content]="mycontent" type="reveal">
+  <ion-content>
+    <ion-list style="padding-left:10px">
+      <ion-item text-center>
+        <img src="assets/images/tapak-logo.png" alt="logo" style="width:200px"/>
+      </ion-item>
+        <button icon-left ion-item menuClose (click)="openPage('Home')">
+           <ion-icon ios="ios-grid" md="md-grid"></ion-icon> Dashboard
+        </button>
+        <button icon-left ion-item menuClose (click)="openPage('Profile')">
+           <ion-icon ios="ios-person" md="md-person"></ion-icon> Profile
+        </button>
+        <button icon-left ion-item menuClose (click)="openPage('FtPayment')" >
+          <ion-icon ios="ios-card" md="md-card"></ion-icon> FT Payment
+        </button>
+        <button icon-left ion-item menuClose (click)="openPage('MenuItem')">
+           <ion-icon ios="ios-list" md="md-list"></ion-icon> Menu Item
+        </button>
+        <button icon-left ion-item menuClose (click)="openPage('FtRental')">
+           <ion-icon ios="ios-bookmarks" md="md-bookmarks"></ion-icon> FT Rental
+        </button>
+        <button icon-left ion-item menuClose (click)="openPage('FtAdvertisement')">
+           <ion-icon ios="ios-easel" md="md-easel"></ion-icon> FT Advertisement
+        </button>
+        <button ion-item menuClose (click)="openPage('Main')">
+           Sign out
+        </button>
+    </ion-list>
+  </ion-content>
+</ion-menu>
+
+<ion-nav #mycontent [root]="rootPage"></ion-nav>

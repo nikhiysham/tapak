@@ -1,0 +1,68 @@
+page-ft-rental {
+  .search_box {
+    font-size:14px;
+    background: color($colors, subheader);
+    border-bottom: 10px solid #CCC;
+  }
+
+  .title {
+    color: color($colors, dark_blue);
+  }
+
+  .welcome_text {
+    font-weight: 400;
+    font-size: 20px;
+  }
+
+  .search_title {
+    font-size:15px;
+  }
+
+  .item-md {
+    border-radius: 5px;
+    font-size:14px;
+  }
+
+  .select-md {
+    background: white;
+    border-radius: 5px;
+  }
+
+  .search_box .button {
+    font-size: 14px !important;
+  }
+
+  .slide_box .title {
+    font-size:14px;
+  }
+
+  .slide_box .card-md {
+    width: auto !important;
+    box-shadow: none !important;
+    margin:0 !important;
+    border-radius:0 !important;
+  }
+
+  .slide_box .label-md {
+    margin:0;
+  }
+
+  .subscribe_box {
+    background: #E1E7E2;
+    height:50%;
+  }
+}
+
+ion-scroll {
+  white-space: nowrap;
+  height: 150px
+}
+
+ion-card{
+  width: 100px;
+  display: inline-block;
+}
+
+ion-select {
+  max-width: 100%;
+}

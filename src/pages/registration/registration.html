@@ -1,0 +1,73 @@
+<ion-header *ngIf="!showSpinner">
+  <ion-navbar>
+    <ion-title>Sign up</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+  <div class="subheader" *ngIf="!showSpinner">
+    <div class="top">
+      Section I: Profile Type
+    </div>
+    <div class="bottom"></div>
+  </div>
+  <div *ngIf="!showSpinner">
+    <ion-list class="padding-right-left">
+      <ion-item>
+        <ion-label>Type</ion-label>
+        <ion-select [(ngModel)]="profile.type">
+          <ion-option *ngFor="let type of types" value="{{type.id}}">
+            {{type.value}}
+          </ion-option>
+        </ion-select>
+      </ion-item>
+    </ion-list>
+  </div>
+  <div class="subheader" *ngIf="!showSpinner">
+    <div class="top">
+      Section II: Personal Profile
+    </div>
+    <div class="bottom"></div>
+  </div>
+  <form (ngSubmit)="doSignUp()">
+    <div *ngIf="profile.type === 'foodtruck' && !showSpinner">
+      <ion-list class="padding-right-left">
+        <ion-item>
+          <ion-input type="email" name="email" placeholder="Email *" [(ngModel)]="user.email" required></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-input type="password" name="password" placeholder="Password *" [(ngModel)]="user.password" required></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-input type="phone" name="phone" placeholder="Mobile No. *" [(ngModel)]="user.mobile" required></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-input name="businessName" placeholder="Business Name" [(ngModel)]="user.businessName" required></ion-input>
+        </ion-item>
+      </ion-list>
+    </div>
+    <div *ngIf="(profile.type === 'public' || profile.type === 'event') && !showSpinner">
+      <ion-list class="padding-right-left">
+        <ion-item>
+          <ion-input type="email" name="email" placeholder="Email *" [(ngModel)]="user.email"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-input type="password" name="password" placeholder="Password *" [(ngModel)]="user.password"></ion-input>
+        </ion-item>
+      </ion-list>
+    </div>
+    <div padding *ngIf="!showSpinner">
+      <button ion-button block color="gray">
+        Sign Up
+      </button>
+    </div>
+  </form>
+  <div class="spinner" *ngIf="showSpinner">
+    <div text-center>
+      <ion-spinner></ion-spinner>
+    </div>
+    <div text-center style="width:100%">
+      Redirect to payment .. please wait
+    </div>
+  </div>
+</ion-content>

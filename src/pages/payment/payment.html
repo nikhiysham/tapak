@@ -1,0 +1,63 @@
+<ion-header *ngIf="!showSpinner">
+  <ion-navbar>
+    <ion-title>MolPay Gateway</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+  <div *ngIf="!showSpinner">
+    <div class="subheader">
+      <div class="top">
+        Section I: Bank
+      </div>
+      <div class="bottom"></div>
+    </div>
+    <div>
+      <ion-list class="padding-right-left">
+        <ion-item>
+          <ion-label>Bank</ion-label>
+          <ion-select [(ngModel)]="payment.bankName">
+            <ion-option *ngFor="let bank of bankNames" value="{{bank.id}}">
+              {{bank.value}}
+            </ion-option>
+          </ion-select>
+        </ion-item>
+      </ion-list>
+    </div>
+    <div class="subheader">
+      <div class="top">
+        Section II: Account
+      </div>
+      <div class="bottom"></div>
+    </div>
+    <div>
+      <ion-list class="padding-right-left">
+        <ion-item>
+          <ion-input placeholder="Account Name *" [(ngModel)]="payment.accountName"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-input placeholder="Account No. *" [(ngModel)]="payment.accountNo"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-input placeholder="Ref Details *" [(ngModel)]="payment.refDetails"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-input type="numeric" placeholder="Amount *" [(ngModel)]="payment.amount"></ion-input>
+        </ion-item>
+      </ion-list>
+      <div padding>
+        <button ion-button block color="gray" (click)="doPay()">
+        Pay
+      </button>
+      </div>
+    </div>
+  </div>
+  <div class="spinner" *ngIf="showSpinner">
+    <div text-center>
+      <ion-spinner></ion-spinner>
+    </div>
+    <div text-center style="width:100%">
+      Processing payment .. please wait
+    </div>
+  </div>
+</ion-content>

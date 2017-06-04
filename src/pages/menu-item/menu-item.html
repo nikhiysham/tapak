@@ -1,0 +1,52 @@
+<ion-header>
+  <ion-navbar hideBackButton="true">
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Menu Item</ion-title>
+    <ion-buttons end>
+      <button ion-button icon-only><ion-icon ios="ios-mail" md="md-mail"></ion-icon></button>
+      <button ion-button icon-only><ion-icon ios="ios-notifications" md="md-notifications"></ion-icon></button>
+      <button ion-button icon-only><ion-icon name="md-more"></ion-icon></button>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+  <div class="subheader">
+    <div class="top" style="padding-bottom:30px">
+      <span class="align-left">
+        Menu Item
+      </span>
+      <span class="align-right">
+          <ion-icon name="ios-grid-outline" style="zoom:1.8; margin-top:-5px"></ion-icon>
+      </span>
+    </div>
+    <div class="bottom"></div>
+  </div>
+  <form >
+    <div>
+      <div padding *ngFor="let item of items; let ind = index">
+        <div class="camera_box" text-center (click)="choose(ind)">
+          <img src="assets/images/camera.png" alt="camera" class="img-camera" *ngIf="common.isEmpty(item.base64Image)" />
+          <img [src]="item.base64Image" alt="camera" class="img-camera" *ngIf="!common.isEmpty(item.base64Image)" />
+        </div>
+        <button ion-button clear block icon-left  (click)="removeItem(ind)"> <ion-icon ios="ios-trash" md="md-trash"></ion-icon> Remove</button>
+      </div>
+    </div>
+    <div padding>
+      <div class="align-left" style="font-size:15px; line-height:40px; word-wrap:break-word;" >
+        Click + icon to add product
+      </div>
+      <div class="align-right">
+        <button ion-fab (click)="addItems()" color="subheader"><ion-icon name="add"></ion-icon></button>
+      </div>
+    </div>
+    <div padding></div>
+    <div padding text-center *ngIf="items.length > 0">
+      <button ion-fab (click)="addItems()" color="subheader" style="zoom:1.5; margin:auto">
+        <span style="font-size:12px">Submit</span>
+      </button>
+    </div>
+  </form>
+</ion-content>
